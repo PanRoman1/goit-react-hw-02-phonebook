@@ -1,13 +1,10 @@
-import React from 'react';
-import { Contact } from 'components/Contact/Contact';
+import { Contact } from 'components/ContactList/Contact/Contact';
 
 export const ContactList = ({ contacts, onDelete }) => {
   return (
     <ul>
-      {contacts.map(({ contact, id }) => (
-        <li key={id}>
-          <Contact contact={contact} onDelete={onDelete} />
-        </li>
+      {contacts.map(item => (
+        <Contact key={item.id} contact={item} onDelete={onDelete} />
       ))}
     </ul>
   );
